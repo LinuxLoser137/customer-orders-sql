@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive browser demo of the Customer Orders SQL project.">
+  <title>Customer Orders SQL Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">SQL Portfolio Project • Interactive Web Demo</p>
+      <h1>Customer Orders SQL Dashboard</h1>
+      <p class="intro">Explore customers, products, orders, and sales totals from a browser-based version of my SQL Server project.</p>
+      <div class="tech-list">
+        <span>SQL Server</span><span>T-SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary-grid" aria-label="Project summary">
+      <article class="summary-card"><span>Customers</span><strong id="customerCount">0</strong></article>
+      <article class="summary-card"><span>Products</span><strong id="productCount">0</strong></article>
+      <article class="summary-card"><span>Orders</span><strong id="orderCount">0</strong></article>
+      <article class="summary-card"><span>Total Revenue</span><strong id="totalRevenue">$0.00</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">Run a Query</p><h2>Choose a SQL Result</h2></div>
+        <button id="resetButton" class="secondary-button" type="button">Reset</button>
+      </div>
+      <div class="query-buttons">
+        <button type="button" data-query="customers">View Customers</button>
+        <button type="button" data-query="orders">View Orders</button>
+        <button type="button" data-query="details">Order Details</button>
+        <button type="button" data-query="spending">Customer Spending</button>
+        <button type="button" data-query="counts">Order Counts</button>
+        <button type="button" data-query="expensive">Most Expensive Product</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="results-header">
+        <div><p class="eyebrow">Query Results</p><h2 id="resultsTitle">Customer Orders Data</h2></div>
+        <label class="search-box"><span class="sr-only">Search results</span><input id="searchInput" type="search" placeholder="Search results..."></label>
+      </div>
+      <p id="statusMessage" class="status-message">Select a query above to display results.</p>
+      <div class="table-wrapper"><table id="resultsTable"><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
+    </section>
+
+    <section class="panel about-panel">
+      <p class="eyebrow">About This Demo</p>
+      <h2>From SQL Server to the Browser</h2>
+      <p>This web demo uses JavaScript data that matches the records in the SQL scripts. It recreates joins, grouping, totals, and sorting so visitors can explore the project without installing SQL Server.</p>
+    </section>
+  </main>
+
+  <footer><p>Created by Savannah Young • SQL Portfolio Project</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
